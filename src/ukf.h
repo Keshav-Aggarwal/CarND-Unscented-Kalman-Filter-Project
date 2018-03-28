@@ -34,6 +34,9 @@ public:
   ///* Augmented state covariance matrix
   MatrixXd P_aug_;
 
+  ///* Measurement Noise matrix
+  MatrixXd R_laser_;
+
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
 
