@@ -25,8 +25,14 @@ public:
   ///* state vector: [pos1 pos2 vel_abs yaw_angle yaw_rate] in SI units and rad
   VectorXd x_;
 
+  ///* Ug state vector: [pos1 pos2 vel_abs yaw_angle yaw_rate] in SI units and rad
+  VectorXd x_aug_;
+
   ///* state covariance matrix
   MatrixXd P_;
+
+  ///* Augmented state covariance matrix
+  MatrixXd P_aug_;
 
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
@@ -67,7 +73,11 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
+  ///* State dimension of the Sigma points
+  int n_sig_;
 
+  ///* Previous timestamp
+  long long previousTimestamp_;
   /**
    * Constructor
    */
